@@ -1,0 +1,24 @@
+@dotnet_8_keyed_services_HostAddress = http://localhost:5041
+
+
+### PAYPAL
+
+
+POST {{dotnet_8_keyed_services_HostAddress}}/create-payment/
+Content-Type: application/json
+
+{
+    "id": "{{$guid}}",
+    "scheme": 0
+}
+
+### KLARNA
+
+
+POST {{dotnet_8_keyed_services_HostAddress}}/create-payment/
+Content-Type: application/json
+
+{
+    "id": "{{$guid}}",
+    "scheme": 1
+}
