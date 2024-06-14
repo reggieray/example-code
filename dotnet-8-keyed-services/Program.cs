@@ -22,9 +22,7 @@ app.UseHttpsRedirection();
 
 app.MapPost("/create-payment", async (Payment payment, IServiceProvider serviceProvider) =>
 {
-    var apmService = serviceProvider.GetKeyedService<IAlternativePaymentService>(payment.Scheme);
-
-    ArgumentNullException.ThrowIfNull(apmService); // For demo purposes
+    var apmService = serviceProvider.GetRequiredKeyedService<IAlternativePaymentService>(payment.Scheme);
 
     var paymentId = await apmService.Create(payment.Id);
 
