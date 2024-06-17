@@ -1,0 +1,6 @@
+@discriminated_unions_with_one_of_HostAddress = http://localhost:5252
+
+GET {{discriminated_unions_with_one_of_HostAddress}}/weatherforecast?location=london
+Accept: application/json
+
+###
