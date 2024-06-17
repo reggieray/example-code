@@ -1,6 +1,20 @@
-@discriminated_unions_with_one_of_HostAddress = http://localhost:5252
 
-GET {{discriminated_unions_with_one_of_HostAddress}}/weatherforecast?location=london
+### Visual Studio without OneOf
+
+GET http://localhost:5252/weatherforecast?location=london
 Accept: application/json
 
-###
+### Visual Studio with OneOf
+
+GET http://localhost:5252/weatherforecast-usingoneof?location=london
+Accept: application/json
+
+### Docker without OneOf
+
+GET http://localhost:8888/weatherforecast?location=london
+Accept: application/json
+
+### Docker with OneOf
+
+GET http://localhost:8888/weatherforecast-usingoneof?location=london
+Accept: application/json
